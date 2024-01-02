@@ -1,10 +1,13 @@
 .btn-style {
   border: 0;
-  height: 47px;
-  width: 128px;
+  height: 42px;
+  width: 114px;
+  display: flex;
   font-size: 18px;
   color: #5f42ff;
   font-weight: 600;
+  align-items: center;
+  justify-content: center;
   border-radius: 29px;
   background-color: #e0e0ff;
 

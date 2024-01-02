@@ -1,11 +1,39 @@
 * {
-  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   direction: rtl;
   text-align: center;
   box-sizing: border-box;
   border: rgba(0, 0, 0, 0);
-  background-color: #f4f6ff;
   font-family: "Heebo", sans-serif;
+  background-color: hsl(229.09deg 100% 97.84%);
+}
+
+.header {
+  width: 80%;
+  height: 70px;
+  padding: 15px;
+  display: flex;
+  border-radius: 15px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.header-title {
+  width: auto;
+  display: flex;
+  color: black;
+  font-size: 27px;
+  font-weight: 700;
+  align-items: center;
+  background-color: transparent;
+}
+
+.header-leave {
+  width: auto;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
 }
