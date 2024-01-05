@@ -1,5 +1,5 @@
-import { IMessage } from "../entities/message.entity";
 import { instance } from "./axios/axios.instance";
+import { IMessage } from "../entities/message.entity";
 
 const messagesService = {
   create: async (entity: IMessage) => {

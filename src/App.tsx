@@ -1,23 +1,63 @@
 import "./App.css";
-import Button from "./components/Atoms/Button/Button";
+import { IUser } from "./entities/user.entity";
+import { UsersList } from "./components/Organizms/Users/UsersList";
 
 function App() {
+  const users: IUser[] = [
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+    {
+      _id: "12",
+      email: "11",
+      firstName: "Yarin",
+      lastName: "David",
+    },
+  ];
+
   return (
-    <div
-      style={{
-        top: 0,
-        display: "flex",
-        paddingTop: "20px",
-        justifyContent: "center",
-      }}
-    >
-      <div className="header">
-        <div className="header-leave">
-          <Button title="LEAVE" />
-        </div>
-        <div className="header-title">My Room</div>
-      </div>
-    </div>
+    <>
+      <UsersList onChooseUserChat={(userId) => console.log()} users={users} />
+    </>
   );
 }
 
