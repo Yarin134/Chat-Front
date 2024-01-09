@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 70px;
   padding: 15px;
   display: flex;
@@ -22,6 +22,7 @@ const HeaderWrapper = styled.div`
   .header-leave {
     width: auto;
     display: flex;
+    cursor: pointer;
     align-items: center;
     background-color: transparent;
   }

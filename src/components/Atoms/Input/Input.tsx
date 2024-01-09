@@ -1,32 +1,59 @@
 import { InputWrapper } from "./Input.styled";
-import { ChangeEvent, FC, useState } from "react";
+import { FC, useRef, useState } from "react";
 
-interface InputProps {
-  onClickSubmit: (value: string) => void;
+interface InputFieldProps {
+  fieldName: string;
+  inputType: string;
+  placeholder: string;
+  changeValue: Function;
+  field: string | number;
 }
 
-const Input: FC<InputProps> = ({ onClickSubmit }: InputProps) => {
-  const [inputValue, setInputValue] = useState<string>("");
+const Input: FC<InputFieldProps> = ({
+  field,
+  fieldName,
+  inputType,
+  placeholder,
+  changeValue,
+}: InputFieldProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [hasFocused, setHasFocused] = useState(false);
 
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(() => e.target.value);
+  const handleFocus = (): void => {
+    setHasFocused(() => true);
+  };
+
+  const handleBlur = (): void => {
+    setHasFocused(() => false);
   };
 
   return (
     <InputWrapper>
-      <input
-        value={inputValue}
-        onChange={onChangeInput}
-        className="input-cutomization"
-        placeholder="הקלד הודעה ..."
-      />
-      <img
-        className="paper-plane"
-        onClick={() => onClickSubmit(inputValue)}
-        src="/icons/paper-plane-regular.svg"
-      />
+      <div className="field">
+        <div
+          className="input-wrapper"
+          onClick={() => {
+            setHasFocused(() => true);
+            inputRef.current?.focus();
+          }}
+        >
+          <input
+            value={field}
+            ref={inputRef}
+            name={fieldName}
+            type={inputType}
+            onBlur={handleBlur}
+            onFocus={handleFocus}
+            className={`input-value ${
+              !hasFocused && field === "" ? "" : "stay-if-value-exists"
+            }`}
+            onChange={(e) => changeValue(e)}
+          />
+          <div className="input-title">{placeholder}</div>
+        </div>
+      </div>
     </InputWrapper>
   );
 };
 
-export { Input };
+export default Input;

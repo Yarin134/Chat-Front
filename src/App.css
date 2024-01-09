@@ -13,3 +13,9 @@
 body {
   background-color: #f4f6ff;
 }
+
+.test {
+  padding: 27px;
+  display: flex;
+  justify-content: center;
+}

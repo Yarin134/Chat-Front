@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const GroupsListWrapper = styled.div`
-  width: 25%;
-  height: 300px;
+  width: 15%;
+  height: 250px;
   display: flex;
   align-items: center;
   border-radius: 15px;
@@ -12,6 +12,7 @@ const GroupsListWrapper = styled.div`
   .group {
     display: flex;
     cursor: pointer;
+    margin-right: 20px;
     align-items: center;
   }
 
@@ -19,6 +20,7 @@ const GroupsListWrapper = styled.div`
     width: auto;
     height: auto;
     color: black;
+    margin-top: 5px;
     font-size: 22px;
     font-weight: 700;
     margin-right: 125px;
