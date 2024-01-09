@@ -18,7 +18,11 @@ const UsersList: FC<UsersProps> = ({ users, onChooseUserChat }: UsersProps) => {
       <div className="users-title">Users</div>
       <div className="users-list">
         {users.map((user: IUser) => (
-          <UserCard onClick={() => onClickUser(user._id)} user={user} />
+          <UserCard
+            user={user}
+            key={user._id}
+            onClick={() => onClickUser(user._id)}
+          />
         ))}
       </div>
     </UsersListWrapper>

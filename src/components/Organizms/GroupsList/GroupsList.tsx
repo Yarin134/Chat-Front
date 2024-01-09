@@ -20,7 +20,7 @@ const GroupsList: FC<GroupsListProps> = ({
       <div className="groups-title">Groups</div>
       <div className="groups-list">
         {groups.map(({ _id, name }: IGroup) => (
-          <div className="group" onClick={() => onClickGroup(_id)}>
+          <div key={_id} className="group" onClick={() => onClickGroup(_id)}>
             {name}
           </div>
         ))}
