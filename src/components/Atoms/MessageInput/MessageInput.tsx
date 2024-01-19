@@ -19,13 +19,13 @@ const MessageInput: FC<MessageInputProps> = ({
       <input
         value={inputValue}
         onChange={onChangeInput}
-        className="input-cutomization"
         placeholder="הקלד הודעה ..."
+        className="input-cutomization"
       />
       <img
         className="paper-plane"
-        onClick={() => onClickSubmit(inputValue)}
         src="/icons/paper-plane-regular.svg"
+        onClick={() => onClickSubmit(inputValue)}
       />
     </MessageInputWrapper>
   );

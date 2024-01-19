@@ -1,9 +1,9 @@
 import Input from "../../Atoms/Input/Input";
+import Button from "../../Atoms/Button/Button";
 import { ChangeEvent, FC, useState } from "react";
 import { IUser } from "../../../entities/user.entity";
 import { CreateUserWrapper } from "./CreateUser.styled";
 import { USER_DEFAULT_VALUE } from "../../../constants/userDefaultValue";
-import Button from "../../Atoms/Button/Button";
 
 interface CreateUserProps {}
 

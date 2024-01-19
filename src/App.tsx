@@ -1,15 +1,8 @@
 import "./App.css";
+import { connect } from "socket.io-client";
 import { IUser } from "./entities/user.entity";
 import { IGroup } from "./entities/group.entity";
-import { Header } from "./components/Molecules/Header/Header";
-import { UsersList } from "./components/Organizms/Users/UsersList";
-import { MessageInput } from "./components/Atoms/MessageInput/MessageInput";
-import { GroupsList } from "./components/Organizms/GroupsList/GroupsList";
-import Input from "./components/Atoms/Input/Input";
 import { useState } from "react";
-import { HomePage } from "./components/Pages/HomePage";
-import { CreateUser } from "./components/Organizms/CreateUser/CreateUser";
-import { AuthPage } from "./components/Pages/AuthPage";
 
 function App() {
   const groups: IGroup[] = [
@@ -88,13 +81,33 @@ function App() {
     },
   ];
 
+  const socket = connect("http://localhost:3000");
+  const [message, setMessage] = useState("");
+
+  const test = () => {
+    socket.emit("send_message", message);
+  };
+
   return (
     <div>
-      <AuthPage />
+      <input
+        type="text"
+        value={message}
+        style={{
+          height: "auto",
+        }}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button
+        style={{
+          height: "auto",
+        }}
+        onClick={test}
+      >
+        Send
+      </button>
     </div>
   );
 }
 
 export default App;
-
-//  <HomePage users={users} groups={groups} />
